@@ -9,23 +9,29 @@ sendDiv.addEventListener("click", () => {
     console.log("Current Money")
     console.log(currentMoney)
     // make post request to backend with input value
-    fetch("https://instaigl.herokuapp.com/api/money", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        body: JSON.stringify({
-            dick: currentMoney
-        })
-    }).then((res) => {
-        // log response obj
-        let body = res.json()
+    // fetch("https://instaigl.herokuapp.com/api/money", {
+    //     method: "POST",
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //         // 'Content-Type': 'application/x-www-form-urlencoded',
+    //       },
+    //     body: JSON.stringify({
+    //         dick: currentMoney
+    //     })
+    // }).then((res) => {
+    //     // log response obj
+    //     let body = res.json()
 
-        console.log(body)
-        // render to the screen :D
-        return body
-    }).then((data) => {
-        messageDiv.append(data)
+    //     console.log(body)
+    //     // render to the screen :D
+    //     return body
+    // }).then((data) => {
+    //     messageDiv.append(data)
+    // })
+
+    axios.post("/api/money", {
+        dick: currentMoney
+    }).then((res) => {
+        messageDiv.append(res.data)
     })
 })
