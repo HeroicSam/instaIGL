@@ -1,4 +1,4 @@
-import { t_dust_ecobuy_strat1, t_dust_highbuy_strat1 } from "./data";
+const { t_dust_ecobuy_strat1, t_dust_highbuy_strat1 } = require("./data");
 
 const express = require("express")
 const app = express()
@@ -11,6 +11,8 @@ app.post('/api/money', (req, res) =>{
   console.log(req);
   const userInput = req.body.dick
   const fixedUserInput = userInput.lower()
+
+  console.log(req.body);
 
   if (fixedUserInput === 'ecobuy') {
 
