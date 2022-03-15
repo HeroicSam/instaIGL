@@ -9,7 +9,7 @@ sendDiv.addEventListener("click", () => {
     console.log("Current Money")
     console.log(currentMoney)
     // make post request to backend with input value
-    fetch("/api/money", {
+    fetch("https://instaigl.herokuapp.com/api/money", {
         method: "POST",
         body: {
             dick: currentMoney
