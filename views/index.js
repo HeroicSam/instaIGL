@@ -10,8 +10,8 @@ sendDiv.addEventListener("click", () => {
     console.log(currentMoney)
 
     axios.post("/api/money", {
-        dick: currentMoney
+        "dick": currentMoney
     }).then((res) => {
-        messageDiv.append(res.data)
+        messageDiv.append(res)
     })
 })
