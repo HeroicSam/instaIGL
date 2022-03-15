@@ -18,8 +18,8 @@ sendDiv.addEventListener("click", () => {
         // log response obj
         let body = res.json()
 
-        console.log(res.json())
+        console.log(body)
         // render to the screen :D
-        messageDiv.append(body)
+        messageDiv.append(body.body)
     })
 })
