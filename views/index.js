@@ -8,4 +8,15 @@ sendDiv.addEventListener("click", () => {
     let currentMoney = moneyDiv.value
     console.log("Current Money")
     console.log(currentMoney)
+    // make post request to backend with input value
+    fetch("/api/money", {
+        method: "POST",
+        body: {
+            dick: currentMoney
+        }
+    }).then((res) => {
+        // log response obj
+        console.log(res)
+        // render to the screen :D
+    })
 })
