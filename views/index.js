@@ -9,7 +9,7 @@ sendDiv.addEventListener("click", () => {
     console.log("Current Money")
     console.log(currentMoney)
 
-    axios.post("https://instaigl.herokuapp.com/api/money", {
+    axios.post("/api/money", {
         "dick": currentMoney
     }).then((res) => {
         console.log(res)
