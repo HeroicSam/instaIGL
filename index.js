@@ -1,10 +1,24 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require("express")
+const app = express()
+app.use('/', express.static('views'));
+app.use('/images', express.static('images'));
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+const port = 3000
+
+// function conor() {
+//     return "conor is gay"
+// }
+
+app.get('/', (req, res) =>{
+    res.sendFile('Hello World!')
+})
+
+// app.get('/:id', (req, res) => {
+//     console.log(req);
+//     res.sendFile('./index.html');
+// })
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
