@@ -78,4 +78,4 @@ const t_dust_ecobuy_strat1= {
     },
 };
 
-export {t_dust_ecobuy_strat1, t_dust_ecobuy_strat1};
+module.exports = {t_dust_ecobuy_strat1, t_dust_ecobuy_strat1};
