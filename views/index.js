@@ -5,5 +5,7 @@ const messageDiv = document.getElementById("message")
 
 sendDiv.addEventListener("click", () => {
     // send whats in the input field to our /api/money
+    let currentMoney = moneyDiv.value
     console.log("dick")
+    console.log(currentMoney)
 })
