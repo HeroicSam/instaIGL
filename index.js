@@ -1,16 +1,18 @@
 const { t_dust_ecobuy_strat1, t_dust_highbuy_strat1 } = require("./data");
 
+const bodyparser = require('body-parser');
+
 const express = require("express")
 const app = express()
 app.use('/', express.static('views'));
 app.use('/images', express.static('images'));
-
+app.use(bodyparser())
 const port = process.env.PORT || 5000
 
 app.post('/api/money', (req, res) =>{
   console.log(req);
   const userInput = req.body.dick
-  const fixedUserInput = userInput.lower()
+  const fixedUserInput = userInput.toLowerCase()
 
   console.log(req.body);
 
