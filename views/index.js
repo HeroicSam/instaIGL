@@ -11,15 +11,21 @@ sendDiv.addEventListener("click", () => {
     // make post request to backend with input value
     fetch("https://instaigl.herokuapp.com/api/money", {
         method: "POST",
-        body: {
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        body: JSON.stringify({
             dick: currentMoney
-        }
+        })
     }).then((res) => {
         // log response obj
         let body = res.json()
 
         console.log(body)
         // render to the screen :D
-        messageDiv.append(body.body)
+        return body
+    }).then((data) => {
+        messageDiv.append(data)
     })
 })
